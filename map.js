@@ -14,9 +14,6 @@ async function setupGeoJson(data) {
   for (let i = 0; i < data.length; i++) {
     const json_data = data[i];
     const features = json_data.source.data;
-    let features_data = features.features;
-
-    features.features = features_data;
     await map.data.addGeoJson(features);
   }
   map.data.setStyle(function(feature) {
